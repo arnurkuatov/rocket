@@ -1,23 +1,32 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Favourites from "@/pages/Favourites";
+import HistorySearch from "@/pages/HistorySearch";
+import Main from "@/pages/Main";
+import GridItem from "@/components/GridItem";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: '/',
+    component: Main,
+    name: 'main'
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: '/grid',
+    component: GridItem,
+    name: 'gridItem'
+  },
+  {
+    path: "/favourites",
+    component: Favourites,
+    name: "favourites",
+  },
+  {
+    path: "histories",
+    component: HistorySearch,
+    name: "histories",
   },
 ];
 
